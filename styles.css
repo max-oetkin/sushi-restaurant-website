@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav{
+    height: 80px;
+    background: #030304;
+}
+
+nav img{
+    position: absolute;
+    top: 17px;
+    left: 12%;
+}
+
+nav ul{
+    float: right;
+    margin-right: 230px;
+}
+
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 25px;
+}
+
+nav ul li a{
+    position: relative;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: lowercase;
+    padding: 5px 0;
+    text-decoration: none;
+}
+
+nav ul li a:before{
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background: white;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .4s linear;
+}
+
+nav ul li a:hover:before{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+label #btn,
+label #cancel{
+    color: #ffffff;
+    font-size: 30px;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check{
+    display: none;
+}
+
+@media (max-width: 944px){
+    label #btn{
+        display: block;
+    }
+
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #030304;
+        opacity: 0.98;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav ul li a{
+        font-size: 17px;
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }
+    #check:checked ~ label #btn{
+        display: none;
+    }
+    #check:checked ~ label #cancel{
+        display: block;
+    }
+}
+
+.hero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+    background-image: url(img/zukibg.jpg), linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.5));
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-container{
+    text-align: center;
+    width: 40%;
+}
+
+.hero-container h1{
+    font-size: 72px;
+    color: #ffffff;
+    margin-bottom: -25px;
+}
+
+.hero-container h2{
+    color: #ffffff;
+    text-transform: lowercase;
+    margin-bottom: 15px;
+}
+
+.hero-container p{
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-size: 13px;
+}
+
+button{
+    background-color: #9c3434;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    outline: none;
+}
+
+.hero-btn{
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: lowercase;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 944px){
+    .hero-container{
+        width: 80%;
+    }
+}
